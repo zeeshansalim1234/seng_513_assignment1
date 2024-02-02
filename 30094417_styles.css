@@ -1,3 +1,7 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 .body_content {
     display: flex;
     flex-direction: column;
@@ -8,6 +12,18 @@
     gap: 20px;
 }
 
+.body_content h2 {
+    font-size: 28px;
+}
+
+p {
+    font-weight: 800;
+}
+
+.body_content p, ul{
+    font-weight: 800;
+    color: black;
+}
 
 .hero-section, .features-section, .cta-section {
     display: flex;
@@ -94,10 +110,10 @@
     font-size: 1.5em;
     min-height: 150px;
     padding: 0px;
+}
+
+.hero-section h1, .cta-section h2 {
     color: beige;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .svg_img {
@@ -132,6 +148,31 @@ button:hover {
 .cta-section {
     background-color: rgb(47 43 40);
 }
+
+/* Link Styles */
+a {
+    margin-left: 5px;
+    text-decoration: none; /* Remove the underline */
+    color: black; /* Set your primary brand color or any color you like */
+    background-color: #e7f0fe; /* Optional: Add a background color */
+    padding: 8px 16px; /* Add some padding around the text */
+    border: 2px solid white; /* Add a border with a color that matches the text */
+    border-radius: 15px; /* Round the corners */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    font-weight: 500; /* Optional: Set a font weight */
+    display: inline-block; /* Allows padding and border to take effect properly */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+}
+
+/* Link Hover and Focus Styles */
+a:hover, a:focus {
+    color: black; /* Darken the color a bit when hovered/focused */
+    background-color: #5780a7; /* Optional: Change the background color slightly */
+    text-decoration: none; /* Ensure the underline doesn't come back */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase the shadow for a "lifting" effect */
+    transform: translateY(-2px); /* Move the link up slightly to mimic a button press */
+}
+
 
 
 @media (min-width: 640px) {
