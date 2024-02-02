@@ -2,16 +2,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.body_content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    min-height: 90vh;
-    margin: 20px;
-    gap: 20px;
-}
-
 .body_content h2 {
     font-size: 28px;
 }
@@ -25,19 +15,22 @@ p {
     color: black;
 }
 
-.hero-section, .features-section, .cta-section {
+.hero-section, .features-section, .cta-section, .body_content, .about-section , .feature{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.body_content {
+    align-items: stretch;
+    min-height: 90vh;
+    margin: 20px;
+    gap: 20px;
+}
+
 .feature {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 85%; /* or you could set a specific height */
+    height: 85%;
     border: 0;
     padding: 40px;
     position: relative;
@@ -46,11 +39,11 @@ p {
 .feature::before {
     content: '';
     position: absolute;
-    top: 10px; /* Half of the subtracted height to center the overlay */
+    top: 10px; 
     right: 0;
-    bottom: 10px; /* Half of the subtracted height to center the overlay */
+    bottom: 10px; 
     left: 0;
-    height: calc(100% - 20px); /* Full height of the parent minus 20px */
+    height: calc(100% - 20px); 
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     z-index: 1;
@@ -58,7 +51,7 @@ p {
 
 .feature * {
     position: relative;
-    z-index: 2; /* Ensures the content is above the overlay */
+    z-index: 2; 
 }
 
 .features-section, .about-section {
@@ -66,7 +59,7 @@ p {
 }
 
 .features-section {
-    background-image: url("/images/flourish.png");
+    background-image: url("./images/flourish.png");
     background-color: #eeaa2d;
     display: grid;
     flex-grow: 5;
@@ -76,37 +69,37 @@ p {
 
 .about-section {
     flex: 3;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */ 
-    background-color: #5780a7; /* Darker shade of green on hover */
-    position: relative; /* Context for absolute positioning */
+    align-items: normal;
+    background-color: #5780a7; 
+    position: relative; 
 }
 
-.about-section::before { /* Pseudo-element for the overlay */
-    content: ''; /* Required for pseudo-elements */
-    position: absolute; /* Position over the .about-section */
-    top: 20px; /* 20px from the top of the container */
-    right: 20px; /* 20px from the right of the container */
-    bottom: 20px; /* 20px from the bottom of the container */
-    left: 20px; /* 20px from the left of the container */
-    background-color: rgba(255, 255, 255, 0.5); /* White overlay with 50% opacity */
-    z-index: 1; /* Ensure the overlay is above the .about-section's background */
+.about-section::before { 
+    content: ''; 
+    position: absolute; 
+    top: 20px; 
+    right: 20px;
+    bottom: 20px; 
+    left: 20px; 
+    background-color: rgba(255, 255, 255, 0.5); 
+    z-index: 1;
     border-radius: 20px;
 }
 
-/* Ensure the content is above the overlay */
 .about-section > * {
     position: relative;
     z-index: 2;
 }
 
-.hero-section {
-    flex: 1;
+.company-image , .hero-section {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: url("/images/background-extra-small.jpg");
+}
+
+.hero-section {
+    flex: 1;
+    background-image: url("./images/background-extra-small.jpg");
     font-size: 1.5em;
     min-height: 150px;
     padding: 0px;
@@ -121,11 +114,11 @@ p {
     width: 100px;
     height: 100px;
     top: 20px;
-    left: 20px; /* Positions the image 20px from the left of its positioned container */
+    left: 20px; 
 }
 
 button {
-    background-color: #000000; /* Green background */
+    background-color: #000000;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -135,120 +128,105 @@ button {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 8px; /* Rounded corners */
-    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    border-radius: 8px; 
+    transition: all 0.3s ease; 
 }
 
 button:hover {
-    background-color: #d46b15; /* Darker shade of green on hover */
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Adds a shadow effect */
-    transform: scale(1.05); /* Slightly increases the size */
+    background-color: #d46b15; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); 
+    transform: scale(1.05); 
 }
 
 .cta-section {
     background-color: rgb(47 43 40);
 }
 
-/* Link Styles */
 a {
     margin-left: 5px;
-    text-decoration: none; /* Remove the underline */
-    color: black; /* Set your primary brand color or any color you like */
-    background-color: #e7f0fe; /* Optional: Add a background color */
-    padding: 8px 16px; /* Add some padding around the text */
-    border: 2px solid white; /* Add a border with a color that matches the text */
-    border-radius: 15px; /* Round the corners */
-    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
-    font-weight: 500; /* Optional: Set a font weight */
-    display: inline-block; /* Allows padding and border to take effect properly */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+    text-decoration: none; 
+    color: black; 
+    background-color: #e7f0fe;
+    padding: 8px 16px; 
+    border: 2px solid white; 
+    border-radius: 15px; 
+    transition: all 0.3s ease-in-out; 
+    font-weight: 500; 
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Link Hover and Focus Styles */
 a:hover, a:focus {
-    color: black; /* Darken the color a bit when hovered/focused */
-    background-color: #5780a7; /* Optional: Change the background color slightly */
-    text-decoration: none; /* Ensure the underline doesn't come back */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase the shadow for a "lifting" effect */
-    transform: translateY(-2px); /* Move the link up slightly to mimic a button press */
+    color: black; 
+    background-color: #5780a7; 
+    text-decoration: none; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
 }
-
-
 
 @media (min-width: 640px) {
     .hero-section {
-        background-image: url("/images/background-small.jpg");
+        background-image: url("./images/background-small.jpg");
     }
 }
 
 @media (min-width: 768px) {
     .hero-section {
-        background-image: url("/images/background-medium.jpg");
+        background-image: url("./images/background-medium.jpg");
     }
 }
 
 @media (min-width: 1024px) {
     .hero-section {
-        background-image: url("/images/background-large.jpg");
+        background-image: url("./images/background-large.jpg");
     }
 }
 
 @media (min-width: 1920px) {
     .hero-section {
-        background-image: url("/images/background-extra-large.jpg");
+        background-image: url("./images/background-extra-large.jpg");
     }
 }
 
-/* Set to one column layout on mobile*/
 @media (max-width: 780px) {
     .features-section {
-        /* Set to one column layout */
         grid-template-columns: 1fr;
     }
     .svg_img {
-        display: none; /* This will hide the logo */
+        display: none; 
     }
 }
 
-/* Images */
-/* Default Image */
-/* Images */
-/* Default Image */
 .company-image {
-    background-image: url('/images/image-small.png');
-    background-position: center; /* Centers the image in the div */
-    background-size: contain; /* Maintain original image size */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    height: 300px; /* Set appropriate height, adjust as needed */
+    background-image: url('./images/image-small.png');
+    background-size: contain; 
+    height: 300px; 
 }
 
-/* Medium and larger images for wider viewports */
 @media (min-width: 180px) {
     .company-image {
-        background-image: url('/images/image-medium.png');
+        background-image: url('./images/image-medium.png');
     }
 }
 
 @media (min-width: 320px) {
     .company-image {
-        background-image: url('/images/image-large.png');
+        background-image: url('./images/image-large.png');
     }
 }
 
 @media (min-width: 640px) {
     .company-image {
-        background-image: url('/images/image-extra-large.png');
+        background-image: url('./images/image-extra-large.png');
     }
 }
 
 
-/* Base styles */
 .image {
-    background-image: url('image-standard-resolution.png');
+    background-image: url('./image-standard-resolution.png');
     background-size: cover;
   }
   
-  /* Retina displays */
   @media
   only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (   min--moz-device-pixel-ratio: 2),
@@ -256,9 +234,7 @@ a:hover, a:focus {
   only screen and (        min-device-pixel-ratio: 2),
   only screen and (                min-resolution: 192dpi),
   only screen and (                min-resolution: 2dppx) {
-    /* Replace with higher-resolution image */
     .image {
-      background-image: url('image-high-resolution.png');
+      background-image: url('./image-high-resolution.png');
     }
   }
-  
