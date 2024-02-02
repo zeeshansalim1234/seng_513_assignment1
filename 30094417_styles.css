@@ -1,5 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: bisque;
 }
 
 .body_content h2 {
@@ -106,7 +107,7 @@ p {
 }
 
 .hero-section h1, .cta-section h2 {
-    color: beige;
+    color: bisque;
 }
 
 .svg_img {
@@ -164,6 +165,8 @@ a:hover, a:focus {
     transform: translateY(-2px); 
 }
 
+/* Media frames for header background images */
+
 @media (min-width: 640px) {
     .hero-section {
         background-image: url("./images/background-small.jpg");
@@ -188,14 +191,7 @@ a:hover, a:focus {
     }
 }
 
-@media (max-width: 780px) {
-    .features-section {
-        grid-template-columns: 1fr;
-    }
-    .svg_img {
-        display: none; 
-    }
-}
+/* Media frames for About section background images */
 
 .company-image {
     background-image: url('./images/image-small.png');
@@ -221,20 +217,27 @@ a:hover, a:focus {
     }
 }
 
+/* Media frames to make the page mobile responsive */
 
-.image {
-    background-image: url('./image-standard-resolution.png');
-    background-size: cover;
-  }
-  
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
-    .image {
-      background-image: url('./image-high-resolution.png');
+@media (max-width: 780px) {
+    .features-section {
+        grid-template-columns: 1fr;
     }
+    .svg_img {
+        display: none; 
+    }
+}
+
+/* High-Res Breakpoint */
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (   -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (           min-resolution: 192dpi),
+only screen and (            min-resolution: 2dppx){
+  .company-image {
+    background-image: url('./images/high-resolution-image.jpeg');
   }
+}
