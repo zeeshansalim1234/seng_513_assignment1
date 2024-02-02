@@ -1,0 +1,214 @@
+/* Flexbox and Grid */
+
+.body_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 90vh;
+    margin: 20px;
+    gap: 20px;
+}
+
+
+.hero-section, .features-section, .cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+    border: 0px;
+    padding: 10%;
+    position: relative; /* Ensure the parent is positioned to contain the absolute pseudo-element */
+}
+
+.feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* This is white with 50% opacity */
+    border-radius: 20px;
+    z-index: 1; /* Ensures the overlay is above the content */
+}
+
+.feature * {
+    position: relative;
+    z-index: 2; /* Ensures the content is above the overlay */
+}
+
+.features-section, .about-section {
+    border-radius: 20px;
+}
+
+.features-section {
+    background-image: url("/images/flourish.png");
+    background-color: #eeaa2d;
+    display: grid;
+    flex-grow: 5;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.about-section {
+    flex: 3;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */ 
+    background-color: #5780a7; /* Darker shade of green on hover */
+    position: relative; /* Context for absolute positioning */
+}
+
+.about-section::before { /* Pseudo-element for the overlay */
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position over the .about-section */
+    top: 20px; /* 20px from the top of the container */
+    right: 20px; /* 20px from the right of the container */
+    bottom: 20px; /* 20px from the bottom of the container */
+    left: 20px; /* 20px from the left of the container */
+    background-color: rgba(255, 255, 255, 0.5); /* White overlay with 50% opacity */
+    z-index: 1; /* Ensure the overlay is above the .about-section's background */
+    border-radius: 20px;
+}
+
+/* Ensure the content is above the overlay */
+.about-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section {
+    flex: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("/images/background-extra-small.jpg");
+    font-size: 1.5em;
+    min-height: 150px;
+    padding: 0px;
+    color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg_img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin: 10px 10px 10px 20px;
+    top: 20px;
+    left: 20px;
+}
+
+button {
+    background-color: #000000; /* Green background */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #d46b15; /* Darker shade of green on hover */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Adds a shadow effect */
+    transform: scale(1.05); /* Slightly increases the size */
+}
+
+.cta-section {
+    background-color: rgb(47 43 40);
+}
+
+
+@media (min-width: 640px) {
+    .hero-section {
+        background-image: url("/images/background-small.jpg");
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        background-image: url("/images/background-medium.jpg");
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-section {
+        background-image: url("/images/background-large.jpg");
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero-section {
+        background-image: url("/images/background-extra-large.jpg");
+    }
+}
+
+/* Images */
+/* Default Image */
+/* Images */
+/* Default Image */
+.company-image {
+    background-image: url('/images/image-small.png');
+    background-position: center; /* Centers the image in the div */
+    background-size: contain; /* Maintain original image size */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 300px; /* Set appropriate height, adjust as needed */
+}
+
+/* Medium and larger images for wider viewports */
+@media (min-width: 180px) {
+    .company-image {
+        background-image: url('/images/image-medium.png');
+    }
+}
+
+@media (min-width: 320px) {
+    .company-image {
+        background-image: url('/images/image-large.png');
+    }
+}
+
+@media (min-width: 640px) {
+    .company-image {
+        background-image: url('/images/image-extra-large.png');
+    }
+}
+
+
+/* Base styles */
+.image {
+    background-image: url('image-standard-resolution.png');
+    background-size: cover;
+  }
+  
+  /* Retina displays */
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    /* Replace with higher-resolution image */
+    .image {
+      background-image: url('image-high-resolution.png');
+    }
+  }
+  
